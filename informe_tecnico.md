@@ -23,7 +23,7 @@ ComputerPeru/
     ├── imagen1.jpg
     ├── imagen2.webp
     ├── imagen3.webp
-    ├── imagen4.webp
+    ├── imagen4.webp 
     ├── imagen5.webp
     ├── imagen6.jfif
     ├── imagen7.jpg
