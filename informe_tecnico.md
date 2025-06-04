@@ -1,119 +1,151 @@
-# Informe Técnico - Computer Perú E-commerce: Desarrollo con HTML Puro
+# Informe Técnico - Sitio Web Computer Perú
+**Fecha de entrega:** 05/05/2024 11:59 PM
 
-## 1. Visión del Proyecto
+## Carátula
+- **Proyecto:** Sitio Web Estático Computer Perú
+- **Curso:** Desarrollo Web
+- **Institución:** Universidad Tecnológica del Perú
+- **Docente:** [Nombre del Docente]
+- **Estudiante:** [Nombre del Estudiante]
 
-Computer Perú es un e-commerce desarrollado completamente en HTML, demostrando el poder del marcado semántico puro. Este proyecto evidencia cómo se puede crear una tienda virtual funcional utilizando únicamente HTML, aprovechando al máximo los elementos nativos del lenguaje de marcado.
+## Presentación
+El presente informe técnico documenta el desarrollo de un sitio web estático para la empresa Computer Perú, especializada en la venta de productos tecnológicos. El proyecto se ha desarrollado siguiendo estrictamente los requerimientos establecidos, utilizando exclusivamente HTML sin estilos CSS ni JavaScript, con el objetivo de crear una estructura semántica sólida y accesible.
 
-## 2. Estructura y Desarrollo HTML
+## Desarrollo
 
-### Base del Documento
-El sitio se construye sobre una estructura HTML5 básica pero robusta:
-- Declaración del tipo de documento como HTML5
-- Elemento raíz con especificación del idioma español
-- Sección de metadatos para codificación y configuración de visualización
-- Cuerpo del documento organizado semánticamente
+### 1. Estructura del Proyecto
+```
+ComputerPeru/
+├── index.html
+├── informe_tecnico.md
+├── README.md
+└── imagenes/
+    ├── imagen1.jpg
+    ├── imagen2.webp
+    ├── imagen3.webp
+    ├── imagen4.webp
+    ├── imagen5.webp
+    ├── imagen6.jfif
+    ├── imagen7.jpg
+    ├── imagen8.webp
+    ├── imagen9.jfif
+    ├── sillagamer1.png
+    ├── sillagamer2.png
+    └── logo.png
+```
 
-### Organización de Contenido
-La información se estructura mediante elementos semánticos:
-- Encabezado principal con logo y navegación
-- Secciones claramente definidas para productos y servicios
-- Pie de página con información de contacto
-- Sistema de navegación interno mediante anclas
+### 2. Análisis de Requerimientos
+- Sitio web estático sin estilos CSS
+- Entrega mediante enlace
+- Plazo de entrega: 29/05 - 05/05 11:59 PM
+- Sin extensiones de plazo
+- Documentación técnica completa
 
-### Catálogo de Productos
-Los productos se presentan mediante:
-- Tablas para organizar la información de manera estructurada
-- Imágenes con textos alternativos descriptivos
-- Información de precios con elementos para mostrar descuentos
-- Botones de acción para interacción básica
+### 3. Implementación Técnica
 
-### Formulario de Contacto
-Implementación de formulario con:
-- Campos de entrada para diferentes tipos de datos
-- Validación nativa del navegador
-- Etiquetas descriptivas para cada campo
-- Área de texto para mensajes extensos
+#### 3.1 Estructura HTML
+El sitio web se desarrolló utilizando HTML5, aprovechando elementos semánticos para mejorar la accesibilidad y SEO:
 
-### Elementos de Estructura
-Uso estratégico de:
-- Encabezados jerárquicos (h1 a h4)
-- Párrafos para contenido textual
-- Listas para información secuencial
-- Tablas para organización de datos
+- `<!DOCTYPE html>`: Declaración del tipo de documento HTML5
+- `<html lang="es">`: Especificación del idioma español
+- `<head>`: Metadatos y título del sitio
+- `<body>`: Contenido principal
+- `<main>`: Contenedor principal
+- `<header>`: Encabezado con navegación
+- `<section>`: Secciones principales del contenido
+- `<footer>`: Pie de página con información de contacto
 
-### Elementos Multimedia
-Manejo de imágenes mediante:
-- Etiquetas img con atributos de dimensiones
-- Textos alternativos descriptivos
-- Optimización de recursos visuales
+#### 3.2 Componentes Principales
 
-### Navegación
-Sistema de navegación basado en:
-- Enlaces internos con anclas
-- Menú de navegación principal
-- Enlaces a redes sociales
-- Estructura jerárquica clara
+##### Navegación
+```html
+<nav>
+    <table align="center">
+        <tr align="center">
+            <td><a href="#inicio">Inicio</a></td>
+            <td><a href="#productos">Productos</a></td>
+            <td><a href="#nosotros">Nosotros</a></td>
+            <td><a href="#contacto">Contacto</a></td>
+        </tr>
+    </table>
+</nav>
+```
 
-## 3. Ventajas del Uso de HTML Puro
+##### Catálogo de Productos
+- Smartphones
+- Laptops Gaming
+- Accesorios Gaming
+- Smartwatches
+- Sillas Gamer
 
-1. **Simplicidad**
-   - Código limpio y directo
-   - Sin dependencias externas
-   - Fácil de mantener y actualizar
-   - Carga rápida de páginas
+Cada producto incluye:
+- Imagen del producto
+- Nombre
+- Precio original y con descuento
+- Opciones de pago
+- Botón de "Añadir al carrito"
 
-2. **Accesibilidad**
-   - Estructura semántica clara
-   - Navegación por teclado
-   - Compatibilidad con lectores de pantalla
-   - Textos alternativos para imágenes
+##### Formulario de Contacto
+```html
+<form action="#" method="post">
+    <input type="text" id="nombre" name="nombre" required>
+    <input type="email" id="email" name="email" required>
+    <input type="tel" id="telefono" name="telefono">
+    <input type="text" id="asunto" name="asunto" required>
+    <textarea id="mensaje" name="mensaje" required></textarea>
+</form>
+```
 
-3. **Compatibilidad**
-   - Funciona en cualquier navegador
-   - No requiere plugins ni extensiones
-   - Compatible con dispositivos antiguos
-   - Degradación elegante
+### 4. Consideraciones Técnicas
 
-4. **Rendimiento**
-   - Carga rápida de páginas
-   - Menos recursos del servidor
-   - Menor consumo de datos
-   - Respuesta inmediata
+#### 4.1 Accesibilidad
+- Uso de atributos `alt` en imágenes
+- Estructura jerárquica de encabezados (h1-h4)
+- Formularios con etiquetas `<label>` asociadas
+- Navegación mediante anclas
 
-## 4. Características Implementadas en HTML
+#### 4.2 Optimización
+- Imágenes en formatos optimizados (webp, jpg, png)
+- Estructura de código limpia y organizada
+- URLs semánticas para enlaces internos
+- Meta tags para SEO básico
 
-1. **Catálogo de Productos**
-   - Presentación estructurada de productos
-   - Imágenes con descripciones
-   - Precios y descuentos
-   - Botones de acción
+#### 4.3 Compatibilidad
+- Markup HTML5 estándar
+- Sin dependencias externas
+- Compatible con todos los navegadores modernos
 
-2. **Sistema de Contacto**
-   - Formulario completo
-   - Validación de campos
-   - Diferentes tipos de entrada
-   - Mensajes de error nativos
+### 5. Desafíos y Soluciones
+1. **Desafío**: Crear un diseño atractivo sin CSS
+   **Solución**: Uso estratégico de tablas HTML y atributos de alineación
 
-3. **Navegación**
-   - Menú principal
-   - Enlaces internos
-   - Anclas para secciones
-   - Estructura jerárquica
+2. **Desafío**: Organización de productos
+   **Solución**: Estructura tabular anidada para mantener consistencia
 
-4. **Contenido Informativo**
-   - Sección "Nosotros"
-   - Información de contacto
-   - Términos y condiciones
-   - Políticas de la empresa
+3. **Desafío**: Navegación responsiva
+   **Solución**: Enlaces de ancla y estructura de navegación simple
 
-## 5. Conclusiones
+## Conclusiones
 
-El desarrollo de Computer Perú demuestra que es posible crear un e-commerce funcional utilizando exclusivamente HTML. Este enfoque:
+1. **Objetivos Cumplidos**
+   - Desarrollo exitoso del sitio web estático
+   - Implementación de todas las secciones requeridas
+   - Documentación técnica completa
+   - Cumplimiento de plazos establecidos
 
-- Prioriza el contenido y la estructura
-- Garantiza accesibilidad universal
-- Ofrece máxima compatibilidad
-- Proporciona una base sólida
-- Demuestra las capacidades del HTML puro
+2. **Aspectos Técnicos**
+   - La estructura HTML demuestra ser robusta y semántica
+   - El sitio es completamente funcional sin necesidad de estilos
+   - La accesibilidad se mantiene en un nivel óptimo
 
-La implementación en HTML puro no solo cumple con los requisitos básicos de un e-commerce, sino que también establece una base robusta y accesible para futuros desarrollos. 
+3. **Recomendaciones Futuras**
+   - Implementación de CSS para mejorar la experiencia visual
+   - Adición de JavaScript para funcionalidades interactivas
+   - Integración con backend para procesar formularios
+   - Implementación de sistema de carrito de compras funcional
+
+4. **Lecciones Aprendidas**
+   - Importancia de la estructura HTML semántica
+   - Valor de la simplicidad en el diseño web
+   - Relevancia de la accesibilidad web
+   - Eficacia de la documentación técnica detallada 
