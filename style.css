@@ -2,6 +2,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 100px;
+}
+
+/* Scroll suave para los enlaces del navbar */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ajuste para secciones cuando se navega desde el navbar */
+section {
+    scroll-margin-top: 100px;
 }
 
 .container {
@@ -11,8 +22,34 @@ body {
 }
 
 .card {
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
+    max-width: 280px;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+    border-radius: 1rem;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1);
+    cursor: pointer;
+    animation: cardEntrance 0.6s ease-out;
+    position: relative;
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.card:hover {
+    transform: scale(1.08) translateY(-8px);
+    box-shadow: 0 1.5rem 3rem rgba(0,0,0,0.3);
+    z-index: 1000;
+    position: relative;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
 }
 
 .card-img-top {
@@ -30,6 +67,12 @@ body {
     cursor: pointer;
     text-decoration: none;
     display: inline-block;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 .btn-primary {
@@ -48,6 +91,23 @@ body {
     padding: 5px 10px;
     border-radius: 3px;
     font-size: 12px;
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .badge {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.card:hover .text-danger {
+    transform: scale(1.08);
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .card-title {
+    color: #007bff;
+    transition: color 0.7s ease;
+    transform: scale(1.05);
 }
 
 .form-control {
@@ -73,5 +133,548 @@ body {
     
     .row {
         flex-direction: column;
+    }
+
+    .card {
+        max-width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
+
+.banner-principal {
+    max-width: 600px;
+}
+
+.img-producto {
+    object-fit: contain;
+    height: 300px;
+}
+
+.img-silla {
+    object-fit: contain;
+    height: 300px;
+}
+
+.producto-mediano {
+    object-fit: contain;
+    height: 250px;
+}
+
+.card-img-top.img-producto,
+.card-img-top.img-silla {
+  display: block;
+  margin: 15px auto 10px auto;
+  max-width: 140px;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card:hover .card-img-top.img-producto,
+.card:hover .card-img-top.img-silla {
+  transform: scale(1.15);
+}
+
+header {
+  /* Elimina cualquier margin-top o padding-top aquí */
+}
+
+.navbar.fixed-top {
+  z-index: 1050;
+}
+
+
+
+
+
+/* Estilos para las pestañas de productos */
+.nav-pills .nav-link {
+  border-radius: 25px;
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-pills .nav-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.nav-pills .nav-link.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.nav-pills .nav-link:not(.active) {
+  background-color: #f8f9fa;
+  color: #333;
+  border-color: #dee2e6;
+}
+
+.tab-content {
+  padding-top: 30px;
+}
+
+.tab-pane {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
+
+/* Estilos para la sección de presentación */
+.seccion-presentacion {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 80px 0;
+    margin-top: 0;
+}
+
+.seccion-presentacion h1 {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 1s ease-out;
+}
+
+.seccion-presentacion .lead {
+    color: #6c757d;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.seccion-presentacion .btn {
+    animation: fadeInUp 1s ease-out 0.4s both;
+    transition: all 0.3s ease;
+}
+
+.seccion-presentacion .btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.seccion-presentacion img {
+    animation: fadeInRight 1s ease-out 0.6s both;
+    transition: all 0.3s ease;
+}
+
+.seccion-presentacion img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive para la sección de presentación */
+@media (max-width: 768px) {
+    .seccion-presentacion {
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .seccion-presentacion h1 {
+        font-size: 2.5rem;
+    }
+    
+    .seccion-presentacion .lead {
+        font-size: 1.1rem;
+    }
+} 
+
+/* Estilos para la sección de ofertas especiales */
+#ofertas {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#ofertas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="50" font-size="20" fill="rgba(255,193,7,0.1)">🔥</text></svg>') repeat;
+    pointer-events: none;
+}
+
+#ofertas .card {
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#ofertas .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+#ofertas .card:hover::before {
+    left: 100%;
+}
+
+#ofertas .card:hover {
+    transform: scale(1.05) translateY(-10px);
+    border-color: #dc3545;
+    box-shadow: 0 15px 35px rgba(220, 53, 69, 0.3);
+}
+
+#ofertas .badge {
+    animation: pulse 2s infinite;
+    font-weight: bold;
+    z-index: 10;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#ofertas .btn-danger {
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+#ofertas .btn-danger:hover {
+    background: linear-gradient(45deg, #c82333, #bd2130);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+}
+
+#ofertas h2 {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #dc3545, 0 0 10px #dc3545, 0 0 15px #dc3545;
+    }
+    to {
+        text-shadow: 0 0 10px #dc3545, 0 0 20px #dc3545, 0 0 30px #dc3545;
+    }
+} 
+
+/* Estilos para el formulario de registro profesional */
+.form-control-lg {
+    border-radius: 0.7rem;
+    border: 1.5px solid #ced4da;
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem;
+    transition: all 0.3s;
+}
+
+.form-control-lg:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.15rem rgba(0,123,255,0.15);
+    background: #fff;
+}
+
+.form-label {
+    color: #495057;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-body.p-5 {
+    padding: 2.5rem 3rem !important;
+}
+
+.btn-lg {
+    padding: 0.9rem 2.5rem;
+    font-size: 1.15rem;
+    border-radius: 0.7rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-lg:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 123, 255, 0.18);
+}
+
+@media (max-width: 992px) {
+    .card-body.p-5 {
+        padding: 2rem 1.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-control-lg {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+    }
+    .card-body.p-5 {
+        padding: 1.2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-control-lg {
+        font-size: 0.97rem;
+        padding: 0.7rem 0.8rem;
+    }
+    .btn-lg {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+} 
+
+/* Estilos para las tarjetas de contacto responsivas */
+.contacto-card {
+    transition: all 0.4s ease;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid transparent;
+}
+
+.contacto-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.2);
+    border-color: #007bff;
+}
+
+.contacto-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.contacto-card:hover .contacto-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilos para las tarjetas de tiendas */
+.tienda-card {
+    transition: all 0.4s ease;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid transparent;
+}
+
+.tienda-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 123, 255, 0.2);
+    border-color: #007bff;
+}
+
+.tienda-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.tienda-card:hover .tienda-icon {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+}
+
+/* Responsive para las tarjetas */
+@media (max-width: 1200px) {
+    .contacto-card, .tienda-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacto-icon, .tienda-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .contacto-icon i, .tienda-icon i {
+        font-size: 1.5rem !important;
+    }
+    
+    .contacto-card .card-body, .tienda-card .card-body {
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .contacto-card, .tienda-card {
+        margin-bottom: 1rem;
+    }
+    
+    .contacto-icon, .tienda-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contacto-icon i, .tienda-icon i {
+        font-size: 1.25rem !important;
+    }
+} 
+
+/* Sección de contacto moderna */
+.seccion-contacto-moderna {
+    background: #f8f9fa;
+}
+
+.seccion-contacto-moderna .icono-contacto {
+    width: 40px;
+    height: 40px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+
+.seccion-contacto-moderna .red-social {
+    width: 44px;
+    height: 44px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+    text-decoration: none;
+}
+
+.seccion-contacto-moderna .red-social:hover {
+    background: #0056b3;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.seccion-contacto-moderna .form-control-lg {
+    border-radius: 0.7rem;
+    border: 1.5px solid #ced4da;
+    font-size: 1.1rem;
+    padding: 1rem 1.25rem 1rem 2.8rem;
+    background: rgba(255,255,255,0.95);
+    transition: all 0.3s;
+}
+
+.seccion-contacto-moderna .form-control-lg:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.15rem rgba(0,123,255,0.15);
+    background: #fff;
+}
+
+.seccion-contacto-moderna .icono-formulario {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+    font-size: 1.2rem;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.seccion-contacto-moderna .btn-success {
+    background: #007bff;
+    border: none;
+    font-size: 1.15rem;
+    border-radius: 0.7rem;
+    padding: 0.9rem 0;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.seccion-contacto-moderna .btn-success:hover {
+    background: #0056b3;
+    transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 991px) {
+    .seccion-contacto-moderna .row.align-items-stretch {
+        flex-direction: column;
+    }
+    .seccion-contacto-moderna .col-lg-5, .seccion-contacto-moderna .col-lg-7 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .seccion-contacto-moderna .p-5 {
+        padding: 2rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .seccion-contacto-moderna .p-5 {
+        padding: 1rem !important;
+    }
+    .seccion-contacto-moderna .form-control-lg {
+        font-size: 0.97rem;
+        padding: 0.7rem 0.8rem 0.7rem 2.2rem;
+    }
+    .seccion-contacto-moderna .btn-success {
+        font-size: 1rem;
+        padding: 0.7rem 0;
+    }
+    .seccion-contacto-moderna .red-social {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
     }
 } 
